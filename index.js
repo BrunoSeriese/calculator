@@ -1,4 +1,4 @@
-
+var temp =0;
 
 
 
@@ -40,6 +40,9 @@ $("#subtract").click(function()
 
 var result = calc(y,i,subtract);
   $("#answer").text(result);
+  temp = temp +result;
+    $("#answer").text(temp);
+  return temp;
 //  $("#answer").val(result);
   });
 
@@ -51,6 +54,10 @@ var result = calc(y,i,subtract);
 
   var result = calc(y,i,add);
     $("#answer").text(result);
+
+    temp = temp +result;
+      $("#answer").text(temp);
+    return temp;
   //  $("#answer").val(result);
     });
 
@@ -63,6 +70,11 @@ var result = calc(y,i,subtract);
 
     var result = calc(y,i,divide);
       $("#answer").text(result);
+      temp = temp +result;
+        $("#answer").text(temp);
+      return temp;
+
+
     //  $("#answer").val(result);
       });
 
@@ -74,6 +86,20 @@ var result = calc(y,i,subtract);
         var i = parseInt($("#number2").val());
 
       var result = calc(y,i,times);
-        $("#answer").text(result);
-      //  $("#answer").val(result);
+
+
+        temp = temp +result;
+          $("#answer").text(temp);
+        return temp;
+
+
         });
+
+
+$("#clear").click(function()
+{
+  temp = temp-temp;
+  $("#answer").text(temp);
+  
+  return temp;
+});
