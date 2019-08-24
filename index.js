@@ -32,82 +32,48 @@ function add(num1, num2) {
 }
 
 
-$("#pressIt").click(function()
+$("#subtract").click(function()
 {
 
   var y = parseInt( $("#number1").val());
   var i = parseInt($("#number2").val());
-  var z =  $("#usedOperator").val();
-  console.log(y +i+ z);
 
- var result="error";
-switch (z) {
-  case "add": result=add(y,i);break;
-  case 'times' : result=times(y,i);break;
-  case "divide": result=divide(y,i);break;
-  case "subtract": result=subtract(y,i);break;
-
-  default:
-}
-
-
-
-  //var result = calc(y,i,eval(z));
-  console.log(result);
-
+var result = calc(y,i,subtract);
   $("#answer").text(result);
 //  $("#answer").val(result);
   });
 
-
-
-  $(document).keydown(function(event)
+  $("#add").click(function()
   {
 
-   z = event.key;
-if (z === "Enter")
-{
+    var y = parseInt( $("#number1").val());
+    var i = parseInt($("#number2").val());
 
-
-  var y = parseInt( $("#number1").val());
-  var i = parseInt($("#number2").val());
-  var z =  $("#usedOperator").val();
-  console.log(y +i+ z);
-
-  var result="error";
-  switch (z) {
-  case "add": result=add(y,i);break;
-  case 'times' : result=times(y,i);break;
-  case "divide": result=divide(y,i);break;
-  case "subtract": result=subtract(y,i);break;
-
-  default:
-  }
-
-
-
-  //var result = calc(y,i,eval(z));
-  console.log(result);
-
-  $("#answer").text(result);
+  var result = calc(y,i,add);
+    $("#answer").text(result);
   //  $("#answer").val(result);
+    });
 
 
+    $("#divide").click(function()
+    {
+
+      var y = parseInt( $("#number1").val());
+      var i = parseInt($("#number2").val());
+
+    var result = calc(y,i,divide);
+      $("#answer").text(result);
+    //  $("#answer").val(result);
+      });
 
 
+      $("#times").click(function()
+      {
 
+        var y = parseInt( $("#number1").val());
+        var i = parseInt($("#number2").val());
 
-
-
-
-
-
-
-
-
-
-
-
-}
-
-  });
+      var result = calc(y,i,times);
+        $("#answer").text(result);
+      //  $("#answer").val(result);
+        });
